@@ -25,6 +25,7 @@ RUN apt-get update -qq && apt-get install -y locales -qq && \
 # Add configurations
 ADD config_local.php /usr/share/nginx/html/apps/config_local.php
 ADD cops.conf /etc/nginx/conf.d/cops.conf
+RUN rm /etc/nginx/sites-enabled/default
 
 # forward request and error logs to docker log collector
 RUN ln -sf /dev/stdout /var/log/nginx/opds.access.log && \
