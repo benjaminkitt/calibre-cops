@@ -15,7 +15,7 @@ RUN apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 573BFD6B3D8FBC64107
 RUN wget -nv -O- https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py | python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
 
 # Install cops
-RUN mkdir /usr/share/nginx/html/apps && git clone https://github.com/seblucas/cops.git /usr/share/nginx/html/apps/
+RUN mkdir /usr/share/nginx/html/apps && git clone https://github.com/benjaminkitt/cops.git /usr/share/nginx/html/apps/
 
 # Add Locale
 RUN apt-get update -qq && apt-get install -y locales -qq && \
